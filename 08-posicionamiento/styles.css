@@ -53,14 +53,29 @@ body {
 .foto {
   height: 90px;
   border-radius: 6px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.producto:nth-child(1) .foto { background: linear-gradient(135deg, #60a5fa, #2563eb); }
-.producto:nth-child(2) .foto { background: linear-gradient(135deg, #34d399, #059669); }
-.producto:nth-child(3) .foto { background: linear-gradient(135deg, #f87171, #dc2626); }
-.producto:nth-child(4) .foto { background: linear-gradient(135deg, #fbbf24, #d97706); }
-.producto:nth-child(5) .foto { background: linear-gradient(135deg, #a78bfa, #7c3aed); }
-.producto:nth-child(6) .foto { background: linear-gradient(135deg, #f472b6, #db2777); }
+.producto:nth-child(1) .foto {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5rCkOjQgZ_mFfn15py28cf0TRKeBs-h-U0BhPTQxX4sfQI3vV_xnBWCSB&s=10");
+}
+.producto:nth-child(2) .foto {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_krfiZol7xZ9oZdQUDAkMA-PW9MAkkTevqkCRPoSRdx5OArOOFwJvFIk&s=10");
+}
+.producto:nth-child(3) .foto {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaYez2Chs7FLegkSdYmBve7xQhZHD8W-FIA4CnNTLh5Gz8hIh-ODrZjSR1&s=10");
+}
+.producto:nth-child(4) .foto {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPNj1IMs2FcKCeqM2MJX1AFjABYmpxgQwpB2EeBtlfHODGftEQhQMz0tM&s=10");
+}
+.producto:nth-child(5) .foto {
+  background-image: url("https://thumb.pccomponentes.com/w-530-530/articles/1066/10667152/10-agfaphoto-camara-analogica-35mm-verde.jpg");
+}
+.producto:nth-child(6) .foto {
+  background-image: url("https://www.mink.com.ar/qloud/ryr/fotos/20269-0.jpg");
+}
 
 .info {
   padding: 24px;
@@ -72,7 +87,7 @@ body {
 }
 
 /* ============================================================
-   TODO 1 — Barra fija
+   TODO 1 ✅ — Barra fija
    A .barra sumale:
    - position: fixed
    - top: 0
@@ -82,16 +97,27 @@ body {
    contenido que quedó escondido detrás de ella?
    ============================================================ */
 
+.barra {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 /* ============================================================
-   TODO 2 — Compensar la barra
+   TODO 2 ✅ — Compensar la barra
    Al body sumale:
    - padding-top: 64px
    Un elemento fixed sale del flujo normal: hay que hacerle
    lugar a mano.
    ============================================================ */
 
+body {
+  padding-top: 64px;
+}
+
 /* ============================================================
-   TODO 3 — El índice pegajoso
+   TODO 3 ✅ — El índice pegajoso
    A .indice dale:
    - position: sticky
    - top: 64px
@@ -101,16 +127,28 @@ body {
    y ahí se queda pegado (debajo de la barra).
    ============================================================ */
 
+.indice {
+  position: sticky;
+  top: 45px;
+  background-color: #ffd166;
+  padding: 8px 24px;
+  z-index: 1;
+}
+
 /* ============================================================
-   TODO 4 — Ancla para la etiqueta
+   TODO 4 ✅— Ancla para la etiqueta
    A .producto sumale:
    - position: relative
    No se mueve de lugar: sirve de REFERENCIA para el hijo con
    position: absolute del TODO 5.
    ============================================================ */
 
+.producto {
+  position: relative;
+}
+
 /* ============================================================
-   TODO 5 — Etiqueta de oferta flotante
+   TODO 5 ✅ — Etiqueta de oferta flotante
    A .etiqueta-oferta dale:
    - position: absolute
    - top: 8px
@@ -123,6 +161,16 @@ body {
    Probá: si le sacás el position: relative a .producto
    (TODO 4), ¿respecto de quién se posiciona la etiqueta?
    ============================================================ */
+
+.etiqueta-oferta {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #e63946;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
 
 /* ============================================================
    TODO 6 — Botón volver arriba
@@ -138,3 +186,15 @@ body {
    Scrolleá y fijate qué pasa si dos elementos posicionados se
    superponen: ¿quién queda arriba? ¿Qué controla el z-index?
    ============================================================ */
+
+.subir {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #1d1d2b;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 24px;
+  z-index: 10;
+  text-decoration: none;
+}
