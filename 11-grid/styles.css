@@ -31,12 +31,24 @@ body {
   border-radius: 6px;
 }
 
-.obra:nth-child(1) .lienzo { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-.obra:nth-child(2) .lienzo { background: linear-gradient(135deg, #94a3b8, #475569); }
-.obra:nth-child(3) .lienzo { background: linear-gradient(135deg, #fde047, #f59e0b); }
-.obra:nth-child(4) .lienzo { background: linear-gradient(135deg, #e2e8f0, #94a3b8); }
-.obra:nth-child(5) .lienzo { background: linear-gradient(135deg, #1e3a8a, #7c3aed); }
-.obra:nth-child(6) .lienzo { background: linear-gradient(135deg, #f97316, #b45309); }
+.obra:nth-child(1) .lienzo {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+.obra:nth-child(2) .lienzo {
+  background: linear-gradient(135deg, #94a3b8, #475569);
+}
+.obra:nth-child(3) .lienzo {
+  background: linear-gradient(135deg, #fde047, #f59e0b);
+}
+.obra:nth-child(4) .lienzo {
+  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+}
+.obra:nth-child(5) .lienzo {
+  background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+}
+.obra:nth-child(6) .lienzo {
+  background: linear-gradient(135deg, #f97316, #b45309);
+}
 
 .obra h2 {
   font-size: 18px;
@@ -48,7 +60,7 @@ body {
 }
 
 /* ============================================================
-   TODO 1 — La grilla
+   TODO 1 ✅ — La grilla
    A .galeria dale:
    - display: grid
    - grid-template-columns: repeat(3, 1fr)    3 columnas iguales
@@ -58,8 +70,15 @@ body {
    escribís repeat(6, 1fr)?
    ============================================================ */
 
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 0 24px 24px;
+}
+
 /* ============================================================
-   TODO 2 — Las tarjetas de las obras
+   TODO 2 ✅ — Las tarjetas de las obras
    A .obra dale:
    - background-color: #ffffff
    - border: 1px solid #e0d9cc
@@ -67,16 +86,27 @@ body {
    - padding: 16px
    ============================================================ */
 
+.obra {
+  background-color: #f7f7f7;
+  border: 1px solid #b6b2ac;
+  border-radius: 8px;
+  padding: 16px;
+}
+
 /* ============================================================
-   TODO 3 — La obra destacada
+   TODO 3 ✅ — La obra destacada
    A .destacada dale:
    - grid-column: span 2    ocupa el ancho de dos columnas
    Bonus: probá también grid-row: span 2 y mirá cómo se
    reacomodan las demás obras solas.
    ============================================================ */
 
+.destacada {
+  grid-column: span 2;
+}
+
 /* ============================================================
-   TODO 4 — Experimento responsive
+   TODO 4 ✅ — Experimento responsive
    Cambiá las columnas de la grilla por:
    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
    Achicá y agrandá la ventana: la grilla se adapta sola.
